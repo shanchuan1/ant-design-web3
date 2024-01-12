@@ -9,6 +9,7 @@ import classNames from 'classnames';
 import { Address } from '../address';
 import { CryptoPrice } from '../crypto-price';
 import useIntl from '../hooks/useIntl';
+import type { IntlType } from '../hooks/useIntl';
 import { fillWith0x, writeCopyText } from '../utils';
 import { ChainSelect } from './chain-select';
 import type { ChainSelectProps } from './chain-select';
@@ -39,7 +40,10 @@ export const ConnectButton: React.FC<ConnectButtonProps> = (props) => {
     ...restProps
   } = props;
   const intl = useIntl('ConnectButton', locale);
-  const {messages:{connect,copyAddress, addressCopied, disconnect}, getMessage} = intl
+  const {
+    messages: { connect, copyAddress, addressCopied, disconnect },
+    getMessage,
+  } = intl;
   const { getPrefixCls } = useContext(ConfigProvider.ConfigContext);
   const prefixCls = getPrefixCls('web3-connect-button');
   const [profileOpen, setProfileOpen] = useState(false);

@@ -14,7 +14,10 @@ export const ConnectButtonTooltip: React.FC<
     }
   >
 > = ({ title, intl, copyable, children, format, prefixCls, __hashId__, ...restProps }) => {
-  const {messages:{copyAddress, addressCopied, walletAddress}, getMessage} = intl
+  const {
+    messages: { copyAddress, addressCopied, walletAddress },
+    getMessage,
+  } = intl;
   const [messageApi, contextHolder] = message.useMessage();
   const mergedFormat = useMemo(() => {
     if (typeof format === 'function') {

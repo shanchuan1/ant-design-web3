@@ -37,7 +37,10 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({
   modalProps,
   balance,
 }) => {
-  const {messages:{copyAddress, addressCopied, disconnect}, getMessage} = intl
+  const {
+    messages: { copyAddress, addressCopied, disconnect },
+    getMessage,
+  } = intl;
   const { getPrefixCls } = useContext(ConfigProvider.ConfigContext);
   const prefixCls = getPrefixCls('web3-connect-button-profile-modal');
   const [messageApi, contextHolder] = message.useMessage();
